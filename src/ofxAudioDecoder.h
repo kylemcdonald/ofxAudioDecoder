@@ -26,14 +26,14 @@ public:
 		return getNumSamples() / channels;
 	}
 	void load(string filename, unsigned long framesToRead = 0) {
-		AudioDecoder* pAudioDecoder = new AudioDecoder(ofToDataPath(filename));
-    if (pAudioDecoder->open() != AUDIODECODER_OK) {
+		AudioDecoder audioDecoder(ofToDataPath(filename));
+    if (audioDecoder.open() != AUDIODECODER_OK) {
 			ofLogError() << "Failed to load " << filename;
 		}
 		
-		int numSamples = pAudioDecoder->numSamples();
-		channels = pAudioDecoder->channels();
-		sampleRate = pAudioDecoder->sampleRate();
+		int numSamples = audioDecoder.numSamples();
+		channels = audioDecoder.channels();
+		sampleRate = audioDecoder.sampleRate();
 		
 		if(framesToRead == 0) {
 			framesToRead = numSamples / channels;
@@ -44,7 +44,7 @@ public:
 		int curSample = 0;
 		while(curSample < samplesToRead) {
 			int remainingSamples = MIN(readBufferSize, samplesToRead - curSample);
-			int samplesRead = pAudioDecoder->read(remainingSamples, &rawSamples[curSample]);
+			int samplesRead = audioDecoder.read(remainingSamples, &rawSamples[curSample]);
 			curSample += samplesRead;
 			if(samplesRead < readBufferSize) {
 				break;
@@ -52,8 +52,6 @@ public:
 		}
 		
 		ofLogVerbose() << "Read " << curSample << " of " << numSamples;
-		
-		delete pAudioDecoder;
 	}
 	const vector<float>& getRawSamples() const {
 		return rawSamples;
