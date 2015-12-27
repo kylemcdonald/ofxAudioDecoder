@@ -13,7 +13,7 @@ bool ofxAudioDecoder::load(ofSoundBuffer & buffer, string filename, size_t frame
 	auto sampleRate = audioDecoder.sampleRate();
 	
 	buffer.setSampleRate(sampleRate);
-	buffer.allocate(numSamples, numChannels);
+	buffer.allocate(numSamples / numChannels, numChannels);
 	
 	//if user asked for 0 samples
 	if(framesToRead == 0) {
