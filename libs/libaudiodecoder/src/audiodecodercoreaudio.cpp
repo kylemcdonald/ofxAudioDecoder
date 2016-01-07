@@ -36,6 +36,8 @@
  * license above.
  */
 
+#ifdef __APPLE__
+
 #include <string>
 #include <iostream>
 #include "audiodecodercoreaudio.h"
@@ -286,4 +288,5 @@ std::vector<std::string> AudioDecoderCoreAudio::supportedFileExtensions() {
     return list;
 }
 
+#endif // ifdef __APPLE__
 

@@ -32,53 +32,32 @@
  * Any person wishing to distribute modifications to the Software is
  * requested to send the modifications to the original developer so that
  * they can be incorporated into the canonical version. It is also 
- * requested that these non-binding requests be included aint with the 
+ * requested that these non-binding requests be included along with the 
  * license above.
  */
 
-/**
- * \file AudioDecoderCoreAudio.h
- * \class AudioDecoderCoreAudio 
- * \brief Decodes M4As (etc) using the AudioToolbox framework included as
- *        part of Core Audio on OS X (and iOS).
- */
 
-#ifndef AUDIODECODERCOREAUDIO_H 
-#define AUDIODECODERCOREAUDIO_H 
+#ifndef __AUDIODECODER_H__
+#define __AUDIODECODER_H__
 
 #include "audiodecoderbase.h"
 
-#include <AudioToolbox/AudioToolbox.h>
-#include "apple/CAStreamBasicDescription.h"
+#ifdef _WIN32 //Always defined on both Win32 and Win64 - http://msdn.microsoft.com/en-us/library/b0084kay(v=vs.80).aspx
+#include "audiodecodermediafoundation.h"
 
-#if !defined(__COREAUDIO_USE_FLAT_INCLUDES__)
-#include <CoreServices/CoreServices.h>
-#include <CoreAudio/CoreAudioTypes.h>
-#include <AudioToolbox/AudioFile.h>
-#include <AudioToolbox/AudioFormat.h>
-#else
-#include "CoreAudioTypes.h"
-#include "AudioFile.h"
-#include "AudioFormat.h"
-#endif
-
-#include <fcntl.h>
-
-class AudioDecoderCoreAudio : public AudioDecoderBase {
-public:
-    AudioDecoderCoreAudio(const std::string filename);
-    ~AudioDecoderCoreAudio();
-    // Overriding AudioDecoderBase 
-    int open();
-    int seek(int sampleIdx);
-    int read(int size, const SAMPLE *buffer);
-    static std::vector<std::string> supportedFileExtensions();
-private:
-    SInt64 m_headerFrames;
-    ExtAudioFileRef m_audioFile;
-    CAStreamBasicDescription m_clientFormat;
-    CAStreamBasicDescription m_inputFormat;
+class AudioDecoder : public AudioDecoderMediaFoundation
+{
+    public:
+        AudioDecoder(const std::string filename) : AudioDecoderMediaFoundation(filename) {};
 };
 
+#elif __APPLE__
+#include "audiodecodercoreaudio.h"
+class AudioDecoder : public AudioDecoderCoreAudio
+{
+    public:
+        AudioDecoder(const std::string filename) : AudioDecoderCoreAudio(filename) {};
+};
+#endif
 
-#endif // ifndef AUDIODECODERCOREAUDIO_H 
+#endif //__AUDIODECODER_H__
