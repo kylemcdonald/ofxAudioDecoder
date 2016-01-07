@@ -31,7 +31,7 @@ class AudioDecoderMediaFoundation : public AudioDecoderBase {
     int open();
     int seek(int sampleIdx);
     int read(int size, const SAMPLE *buffer);
-    inline int numSamples();
+    int numSamples();
     std::vector<std::string> supportedFileExtensions();
 
   private:
