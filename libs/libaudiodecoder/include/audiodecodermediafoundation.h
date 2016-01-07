@@ -8,7 +8,6 @@
  * \date Jan 10, 2011
  */
 
-#ifdef _WIN32 //Always defined on both Win32 and Win64 - http://msdn.microsoft.com/en-us/library/b0084kay(v=vs.80).aspx
 
 #ifndef AUDIODECODERMEDIAFOUNDATION_H
 #define AUDIODECODERMEDIAFOUNDATION_H
@@ -17,7 +16,7 @@
 
 //Force MSVC to generate a .lib file with /implib but without a .def file
 //http://msdn.microsoft.com/en-us/library/67wc07b9(v=vs.80).aspx
-DllExport int AudioDecoderMediaFoundation = 1;
+//DllExport int AudioDecoderMediaFoundation = 1;
 
 class IMFSourceReader;
 class IMFMediaType;
@@ -57,9 +56,7 @@ class DllExport AudioDecoderMediaFoundation : public AudioDecoderBase {
     bool m_dead;
     bool m_seeking;
 	unsigned int m_iBitsPerSample;
-	SHORT_SAMPLE m_destBufferShort[8192];
+	SHORT_SAMPLE m_destBufferShort[32768];
 };
 
 #endif // ifndef AUDIODECODERMEDIAFOUNDATION_H
-
-#endif // ifdef _WIN32

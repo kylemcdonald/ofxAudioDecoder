@@ -36,8 +36,6 @@
  * license above.
  */
 
-#ifdef __APPLE__
-
 #include <string>
 #include <iostream>
 #include "audiodecodercoreaudio.h"
@@ -56,8 +54,7 @@ AudioDecoderCoreAudio::~AudioDecoderCoreAudio() {
 }
 
 int AudioDecoderCoreAudio::open() {
-    std::cerr << "AudioDecoderCoreAudio::open()" << std::endl;
-
+    
     //Open the audio file.
     OSStatus err;
 
@@ -288,5 +285,4 @@ std::vector<std::string> AudioDecoderCoreAudio::supportedFileExtensions() {
     return list;
 }
 
-#endif // ifdef __APPLE__
 

@@ -20,8 +20,6 @@
  *                                                                         *
  ***************************************************************************/
 
-#ifdef _WIN32 //Always defined on both Win32 and Win64 - http://msdn.microsoft.com/en-us/library/b0084kay(v=vs.80).aspx
-
 #include <iostream>
 #include <string.h>
 #include <windows.h>
@@ -732,5 +730,3 @@ inline __int64 AudioDecoderMediaFoundation::mfFromFrame(__int64 frame)
 {
     return static_cast<double>(frame) / m_iSampleRate * 1e7;
 }
-
-#endif // ifdef _WIN32

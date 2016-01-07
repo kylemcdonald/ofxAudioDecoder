@@ -43,8 +43,6 @@
  *        part of Core Audio on OS X (and iOS).
  */
 
-#ifdef __APPLE__
-
 #ifndef AUDIODECODERCOREAUDIO_H 
 #define AUDIODECODERCOREAUDIO_H 
 
@@ -84,5 +82,3 @@ private:
 
 
 #endif // ifndef AUDIODECODERCOREAUDIO_H 
-
-#endif // ifdef __APPLE__
