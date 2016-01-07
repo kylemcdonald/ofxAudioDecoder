@@ -24,7 +24,7 @@ class IMFMediaSource;
 
 #define SHORT_SAMPLE short
 
-class DllExport AudioDecoderMediaFoundation : public AudioDecoderBase {
+class AudioDecoderMediaFoundation : public AudioDecoderBase {
   public:
     AudioDecoderMediaFoundation(const std::string filename);
     ~AudioDecoderMediaFoundation();
