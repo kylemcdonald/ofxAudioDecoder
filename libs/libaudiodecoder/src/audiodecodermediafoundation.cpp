@@ -502,14 +502,16 @@ bool AudioDecoderMediaFoundation::configureAudioStream()
 	hr = m_pAudioType->GetUINT32(MF_MT_AUDIO_NUM_CHANNELS, &numChannels);
 	hr = m_pAudioType->GetUINT32(MF_MT_AUDIO_SAMPLES_PER_SECOND, &samplesPerSecond);
 
-	std::cout << "bitsPerSample: " << bitsPerSample << std::endl;
-	std::cout << "allSamplesIndependent: " << allSamplesIndependent << std::endl;
-	std::cout << "fixedSizeSamples: " << fixedSizeSamples << std::endl;
-	std::cout << "sampleSize: " << sampleSize << std::endl;
-	std::cout << "bitsPerSample: " << bitsPerSample << std::endl;
-	std::cout << "blockAlignment: " << blockAlignment << std::endl;
-	std::cout << "numChannels: " << numChannels << std::endl;
-	std::cout << "samplesPerSecond: " << samplesPerSecond << std::endl;
+	if (sDebug) {
+		std::cout << "bitsPerSample: " << bitsPerSample << std::endl;
+		std::cout << "allSamplesIndependent: " << allSamplesIndependent << std::endl;
+		std::cout << "fixedSizeSamples: " << fixedSizeSamples << std::endl;
+		std::cout << "sampleSize: " << sampleSize << std::endl;
+		std::cout << "bitsPerSample: " << bitsPerSample << std::endl;
+		std::cout << "blockAlignment: " << blockAlignment << std::endl;
+		std::cout << "numChannels: " << numChannels << std::endl;
+		std::cout << "samplesPerSecond: " << samplesPerSecond << std::endl;
+	}
 
 	m_iChannels = numChannels;
 	m_iSampleRate = samplesPerSecond;
