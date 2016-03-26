@@ -106,9 +106,13 @@ int AudioDecoderCoreAudio::open() {
 	outputFormat.mFormatID = kAudioFormatLinearPCM;
 	outputFormat.mSampleRate = inputFormat.mSampleRate;
 	outputFormat.mChannelsPerFrame = 2;
-    outputFormat.mFormatFlags = kAudioFormatFlagsCanonical;  
-    //kAudioFormatFlagsCanonical means Native endian, float, packed on Mac OS X, 
-    //but signed int for iOS instead.
+	#ifdef TARGET_OS_IPHONE
+	outputFormat.mFormatFlags = kAudioFormatFlagIsFloat;
+	#elif defined TARGET_OS_MAC
+	outputFormat.mFormatFlags = kAudioFormatFlagsCanonical;
+	//kAudioFormatFlagsCanonical means Native endian, float, packed on Mac OS X,
+	//but signed int for iOS instead.
+	#endif
 
     //Note iPhone/iOS only supports signed integers supposedly:
     //outputFormat.mFormatFlags = kAudioFormatFlagIsSignedInteger;
