@@ -1,0 +1,75 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="src\ofApp.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\main.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\main.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\ofApp.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\addons\ofxAudioDecoder\src\ofxAudioDecoder.cpp">
+      <Filter>addons\ofxAudioDecoder\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libs\libaudiodecoder\src\audiodecoderbase.cpp">
+      <Filter>addons\ofxAudioDecoder\libs\libaudiodecoder\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libs\libaudiodecoder\src\audiodecodermediafoundation.cpp">
+      <Filter>addons\ofxAudioDecoder\libs\libaudiodecoder\src</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="src">
+      <UniqueIdentifier>{d8376475-7454-4a24-b08a-aac121d3ad6f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="addons">
+      <UniqueIdentifier>{71834F65-F3A9-211E-73B8-DC85}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="addons\ofxAudioDecoder">
+      <UniqueIdentifier>{B392EF4F-538A-9A5F-2908-E562}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="addons\ofxAudioDecoder\src">
+      <UniqueIdentifier>{19EA0C39-DAAB-239B-E919-BA4D}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="addons\ofxAudioDecoder\libs">
+      <UniqueIdentifier>{3C3D65F6-0FF6-B2E5-AEC1-7924}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="addons\ofxAudioDecoder\libs\libaudiodecoder">
+      <UniqueIdentifier>{A8A5DB76-E73E-DB0D-5EF6-59C7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="addons\ofxAudioDecoder\libs\libaudiodecoder\include">
+      <UniqueIdentifier>{E0EE1DDC-9477-8C5C-DDEF-BB81}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="addons\ofxAudioDecoder\libs\libaudiodecoder\src">
+      <UniqueIdentifier>{5124ed9e-d135-4d10-ab5c-bec8ac6484fa}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\ofApp.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ofApp.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\addons\ofxAudioDecoder\src\ofxAudioDecoder.h">
+      <Filter>addons\ofxAudioDecoder\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libs\libaudiodecoder\include\audiodecoderbase.h">
+      <Filter>addons\ofxAudioDecoder\libs\libaudiodecoder\include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libs\libaudiodecoder\include\audiodecodermediafoundation.h">
+      <Filter>addons\ofxAudioDecoder\libs\libaudiodecoder\include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libs\libaudiodecoder\include\audiodecoder.h">
+      <Filter>addons\ofxAudioDecoder\libs\libaudiodecoder\include</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="icon.rc" />
+  </ItemGroup>
+</Project>
