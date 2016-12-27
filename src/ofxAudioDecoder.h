@@ -2,7 +2,11 @@
 
 #include "ofMain.h"
 
-#include <audiodecoder.h>
+#ifdef __linux
+    #include <sndfile.hh>
+#else
+    #include <audiodecoder.h>
+#endif
 
 class ofxAudioDecoder {
 public:

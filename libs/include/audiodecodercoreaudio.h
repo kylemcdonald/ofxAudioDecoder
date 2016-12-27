@@ -52,11 +52,7 @@
 #include "apple/CAStreamBasicDescription.h"
 
 #if !defined(__COREAUDIO_USE_FLAT_INCLUDES__)
-#ifdef TARGET_OS_IPHONE
-#include <MobileCoreServices/MobileCoreServices.h>
-#elif defined TARGET_OS_MAC
 #include <CoreServices/CoreServices.h>
-#endif
 #include <CoreAudio/CoreAudioTypes.h>
 #include <AudioToolbox/AudioFile.h>
 #include <AudioToolbox/AudioFormat.h>
