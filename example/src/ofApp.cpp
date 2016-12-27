@@ -3,7 +3,12 @@
 void ofApp::setup() {
 	ofSetVerticalSync(true);
 	ofSetFrameRate(120);
+#ifndef __linux
 	loadFile("demo.mp3");
+#else
+	loadFile("data/demo.ogg"); // directly specify path on linux
+#endif
+
 }
 
 void ofApp::update() {
